@@ -9,6 +9,7 @@ yarn install
 ```
 yarn serve
 ```
+If this fails with `error:0308010C:digital envelope routines::unsupported`, try running `export NODE_OPTIONS=--openssl-legacy-provider`.
 
 ### Compiles and minifies for production
 ```
