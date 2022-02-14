@@ -18,6 +18,7 @@
           }`"
           :alt="name + ' category'"
           class="h-full w-full object-cover"
+          ondragstart="return false;"
         />
       </div>
     </div>
