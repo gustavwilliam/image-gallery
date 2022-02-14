@@ -1,27 +1,70 @@
 <template>
-  <div id="nav"><router-link to="/">Discover</router-link> |</div>
-  <router-view />
+  <TheNavbar
+    :navigation="[
+      {
+        name: 'Discover',
+        href: '/#',
+        current: isPathActive('/'),
+      },
+      {
+        name: 'Random',
+        href: '/#random',
+        current: isPathActive('/random'),
+      },
+      {
+        name: 'GitHub',
+        href: 'https://gh.godi.se/image-gallery',
+        current: false,
+      },
+    ]"
+    @navigate="path = $event"
+  />
+  <div>
+    <Discover v-show="isPathActive('/')" />
+    <Random v-show="isPathActive('/random')" />
+  </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script lang="ts">
+import { defineComponent } from "vue";
+import TheNavbar from "@/components/TheNavbar.vue";
+import Discover from "@/views/Discover.vue";
+import Random from "@/views/Random.vue";
 
-#nav {
-  padding: 30px;
-}
+const paths: Record<string, Array<string>> = {
+  "/": ["", "/", "/#"],
+  "/random": ["/#random", "#random"],
+};
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+export default defineComponent({
+  name: "App",
+  components: { Random, Discover, TheNavbar },
+  data() {
+    return {
+      path: window.location.hash,
+    };
+  },
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+  setup() {
+    return {
+      paths,
+    };
+  },
+
+  computed: {
+    pageFound(): boolean {
+      const mapped = Object.keys(paths).map((testPath) => {
+        return paths[testPath].indexOf(this.path) != -1;
+      });
+      console.log(mapped);
+      return mapped.some(Boolean);
+    },
+  },
+
+  methods: {
+    isPathActive(testPath: string): boolean {
+      return paths[testPath].indexOf(this.path) != -1;
+    },
+  },
+});
+</script>
