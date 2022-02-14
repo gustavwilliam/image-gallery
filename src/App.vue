@@ -20,8 +20,8 @@
     @navigate="path = $event"
   />
   <div>
-    <Discover v-show="isPathActive('/')" />
-    <Random v-show="isPathActive('/random')" />
+    <Discover :categories="categories" v-show="isPathActive('/')" />
+    <Random :categories="categories" v-show="isPathActive('/random')" />
   </div>
 </template>
 
@@ -42,6 +42,7 @@ export default defineComponent({
   data() {
     return {
       path: window.location.hash,
+      categories: null,
     };
   },
 
@@ -49,6 +50,17 @@ export default defineComponent({
     return {
       paths,
     };
+  },
+
+  mounted() {
+    fetch("https://cdn.godi.se/image-gallery/data.json")
+      .then((res) => res.json())
+      .then((out) => {
+        this.categories = out;
+      })
+      .catch((err) => {
+        throw err;
+      });
   },
 
   computed: {

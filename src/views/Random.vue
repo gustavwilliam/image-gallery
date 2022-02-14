@@ -4,6 +4,8 @@
 
 <script>
 export default {
-  name: "Random",
+  props: {
+    categories: { string: {} },
+  },
 };
 </script>

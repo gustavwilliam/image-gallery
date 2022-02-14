@@ -14,20 +14,8 @@ export default defineComponent({
     GridFeatured,
     TheMainContentFrame,
   },
-  data() {
-    return {
-      categories: null,
-    };
-  },
-  created() {
-    fetch("https://cdn.godi.se/image-gallery/data.json")
-      .then((res) => res.json())
-      .then((out) => {
-        this.categories = out;
-      })
-      .catch((err) => {
-        throw err;
-      });
+  props: {
+    categories: { string: {} },
   },
 });
 </script>
