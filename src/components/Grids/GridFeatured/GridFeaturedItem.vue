@@ -2,7 +2,9 @@
   <a href="#">
     <div class="rounded-xl shadow-lg h-full w-full overflow-hidden relative">
       <div class="z-10 w-full absolute bottom-0 left-0">
-        <div class="item-bg-gradient w-full px-6 py-4 text-white text-left">
+        <div
+          class="z-10 item-bg-gradient w-full px-6 py-4 text-white text-left"
+        >
           <p class="mt-1 uppercase text-sm">{{ yearSpan }}</p>
           <h3 class="text-lg leading-6 font-medium">{{ name }}</h3>
         </div>
@@ -64,7 +66,7 @@ export default defineComponent({
 .item-bg-gradient {
   background-image: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.6),
     rgba(0, 0, 0, 0)
   );
 }
