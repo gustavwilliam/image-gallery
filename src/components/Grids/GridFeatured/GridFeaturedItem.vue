@@ -1,7 +1,7 @@
 <template>
   <a href="#">
     <div
-      class="rounded-xl shadow-lg transition-all duration-500 ease-in-out transform hover:scale-105 h-full w-full overflow-hidden relative"
+      class="rounded-xl shadow-lg transition-all duration-200 ease-in-out transform hover:scale-105 h-full w-full overflow-hidden relative"
     >
       <div class="z-10 w-full absolute bottom-0 left-0">
         <div
