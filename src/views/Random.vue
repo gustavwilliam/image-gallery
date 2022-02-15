@@ -10,13 +10,15 @@
         Here's a random image from the collections:
       </p>
     </div>
+    <TheRandomImage :categories="categories" />
   </TheMainContentFrame>
 </template>
 
 <script>
 import TheMainContentFrame from "@/components/TheMainContentFrame";
+import TheRandomImage from "@/components/TheRandomImage";
 export default {
-  components: { TheMainContentFrame },
+  components: { TheRandomImage, TheMainContentFrame },
   props: {
     categories: { string: {} },
   },
