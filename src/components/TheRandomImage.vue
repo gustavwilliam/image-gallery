@@ -38,7 +38,16 @@ export default defineComponent({
   methods: {
     updateImage(): void {
       if (this.images) {
-        const index = Math.floor(Math.random() * this.images.length);
+        let index = Math.floor(Math.random() * this.images.length);
+        if (this.activeImageURL === this.images[index]) {
+          if (index + 1 === this.images.length) {
+            // When at the final item, loop back to first
+            index = 0;
+          } else {
+            index += 1;
+          }
+        }
+
         this.activeImageURL = this.images[index];
       } // Else, don't update
     },
