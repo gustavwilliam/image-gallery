@@ -8,7 +8,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import GridFeaturedItem from "@/components/Grids/GridFeatured/GridFeaturedItem.vue";
 import { defineComponent } from "vue";
 
@@ -17,7 +17,7 @@ export default defineComponent({
     GridFeaturedItem,
   },
   props: {
-    categories: { string: {} },
+    categories: Object,
   },
 });
 </script>

@@ -22,13 +22,14 @@
   </TheMainContentFrame>
 </template>
 
-<script>
-import TheMainContentFrame from "@/components/TheMainContentFrame";
-import TheRandomImage from "@/components/TheRandomImage";
+<script lang="ts">
+import TheMainContentFrame from "@/components/TheMainContentFrame.vue";
+import TheRandomImage from "@/components/TheRandomImage.vue";
+
 export default {
   components: { TheRandomImage, TheMainContentFrame },
   props: {
-    categories: { string: {} },
+    categories: Object,
   },
 };
 </script>

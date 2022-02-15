@@ -25,7 +25,9 @@ export default defineComponent({
     TheMainContentFrame,
   },
   props: {
-    categories: { string: {} },
+    categories: {
+      type: Object,
+    },
   },
 });
 </script>
