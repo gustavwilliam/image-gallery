@@ -1,5 +1,9 @@
 <template>
-  <img :src="activeImageURL" alt="Random image" class="rounded-xl shadow-lg" />
+  <img
+    :src="`https://cdn.godi.se/${activeImageURL}`"
+    alt="Random image"
+    class="rounded-xl shadow-lg"
+  />
 </template>
 
 <script lang="ts">
@@ -14,7 +18,7 @@ export default defineComponent({
 
   data() {
     return {
-      activeImageURL: "https://cdn.godi.se/image-gallery/image_not_found.svg",
+      activeImageURL: "image-gallery/image_not_found.svg",
     };
   },
 
@@ -35,7 +39,7 @@ export default defineComponent({
     updateImage(): void {
       if (this.images) {
         const index = Math.floor(Math.random() * this.images.length);
-        this.activeImageURL = `https://cdn.godi.se/${this.images[index]}`;
+        this.activeImageURL = this.images[index];
       } // Else, don't update
     },
   },
