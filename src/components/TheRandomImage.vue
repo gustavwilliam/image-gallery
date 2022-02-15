@@ -33,8 +33,17 @@ export default defineComponent({
 
   methods: {
     updateImage(): void {
-      const index = Math.floor(Math.random() * this.images.length);
-      this.activeImageURL = `https://cdn.godi.se/${this.images[index]}`;
+      if (this.images) {
+        const index = Math.floor(Math.random() * this.images.length);
+        this.activeImageURL = `https://cdn.godi.se/${this.images[index]}`;
+      } // Else, don't update
+    },
+  },
+
+  watch: {
+    categories() {
+      // Show a random image, when categories are finally fetched
+      this.updateImage();
     },
   },
 });
