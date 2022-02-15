@@ -19,6 +19,9 @@ module.exports = {
           750: "#262f3d",
         },
       },
+      height: {
+        128: "32rem",
+      },
     },
   },
   plugins: [],

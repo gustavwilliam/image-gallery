@@ -1,9 +1,13 @@
 <template>
-  <img
-    :src="`https://cdn.godi.se/${activeImageURL}`"
-    alt="Random image"
-    class="rounded-xl shadow-lg"
-  />
+  <div
+    class="sm:bg-gray-100 sm:p-5 flex flex-row justify-center rounded-2xl md:h-96 lg:h-128"
+  >
+    <img
+      :src="`https://cdn.godi.se/${activeImageURL}`"
+      alt="Random image"
+      class="rounded-xl shadow-lg h-full object-contain"
+    />
+  </div>
 </template>
 
 <script lang="ts">
