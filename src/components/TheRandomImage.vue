@@ -1,6 +1,5 @@
 <template>
-  <img :src="activeImageURL" alt="Random image" />
-  <button @click="this.updateImage">Update image</button>
+  <img :src="activeImageURL" alt="Random image" class="rounded-xl shadow-lg" />
 </template>
 
 <script lang="ts">
