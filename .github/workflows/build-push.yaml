@@ -1,0 +1,24 @@
+name: Build & Push
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-push:
+    name: Build & Push
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up node
+        uses: actions/setup-node@v2
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Set up Git identity
+        run: |
+          git config --global user.email "<>"
+          git config --global user.name "Godi Auto-Deploy"
+      - name: Build and push to gh-pages
+        run: yarn deploy

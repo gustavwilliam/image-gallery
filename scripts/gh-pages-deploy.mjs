@@ -8,7 +8,7 @@ import { execa } from "execa";
     await execa("yarn", ["run", "build"]);
     // Understand if it's dist or build folder
     await execa("git", ["--work-tree", "dist", "add", "--all"]);
-    await execa("git", ["--work-tree", "dist", "commit", "-m", "gh-pages"]);
+    await execa("git", ["--work-tree", "dist", "commit", "-m", "Deploy to gh-pages"]);
     console.log("Pushing to gh-pages...");
     await execa("git", ["push", "origin", "HEAD:gh-pages", "--force"]);
     await execa("rm", ["-r", "dist"]);
