@@ -1,6 +1,6 @@
 <template>
   <div
-    class="sm:bg-gray-100 sm:p-5 flex flex-row justify-center rounded-2xl md:h-96 lg:h-128"
+    class="sm:bg-gray-100 sm:dark:bg-gray-800 sm:p-5 flex flex-row justify-center rounded-2xl md:h-96 lg:h-128"
   >
     <img
       :src="`https://cdn.godi.se/${activeImageURL}`"
