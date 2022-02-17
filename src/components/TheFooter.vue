@@ -11,7 +11,7 @@
         />
       </div>
       <div class="text-sm col-span-2">
-        A collection of images. Website and images made by
+        A collection of images. Website and images by
         <a
           href="https://github.com/gustavwilliam/"
           target="_blank"
