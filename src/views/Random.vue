@@ -8,7 +8,7 @@
           Random image
         </h1>
         <p class="mt-1 max-w-2xl text-sm text-gray-500 dark:text-gray-400">
-          Here's a random image from the collections.
+          Here's a random image from one of the collections.
         </p>
       </div>
       <button
