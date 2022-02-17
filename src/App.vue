@@ -23,11 +23,13 @@
     <Discover :categories="categories" v-show="isPathActive('/')" />
     <Random :categories="categories" v-show="isPathActive('/random')" />
   </div>
+  <TheFooter />
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 import TheNavbar from "@/components/TheNavbar.vue";
+import TheFooter from "@/components/TheFooter.vue";
 import Discover from "@/views/Discover.vue";
 import Random from "@/views/Random.vue";
 
@@ -38,7 +40,7 @@ const paths: Record<string, Array<string>> = {
 
 export default defineComponent({
   name: "App",
-  components: { Random, Discover, TheNavbar },
+  components: { Random, Discover, TheNavbar, TheFooter },
   data() {
     return {
       path: window.location.hash,
