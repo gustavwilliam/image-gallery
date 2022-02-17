@@ -3,7 +3,7 @@
     class="sm:bg-gray-100 sm:dark:bg-gray-800 sm:p-5 flex flex-row justify-center rounded-2xl md:h-96 lg:h-128"
   >
     <img
-      :src="`https://cdn.godi.se/${activeImageURL}`"
+      :src="`https://cdn.godi.se/${activeImage}`"
       alt="Random image"
       class="rounded-xl shadow-lg h-full object-contain"
     />
@@ -22,7 +22,8 @@ export default defineComponent({
 
   data() {
     return {
-      activeImageURL: "image-gallery/image_not_found.svg",
+      activeImage: "image-gallery/image_not_found.svg",
+      activeCategory: "",
     };
   },
 
@@ -43,7 +44,7 @@ export default defineComponent({
     updateImage(): void {
       if (this.images) {
         let index = Math.floor(Math.random() * this.images.length);
-        if (this.activeImageURL === this.images[index]) {
+        if (this.activeImage === this.images[index]) {
           if (index + 1 === this.images.length) {
             // When at the final item, loop back to first
             index = 0;
@@ -52,7 +53,10 @@ export default defineComponent({
           }
         }
 
-        this.activeImageURL = this.images[index];
+        this.activeImage = this.images[index];
+        const category = this.activeImage.split("/")[1];
+        this.activeCategory = // Make category uppercase
+          category.charAt(0).toUpperCase() + category.slice(1);
       } // Else, don't update
     },
   },
