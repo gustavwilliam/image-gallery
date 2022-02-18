@@ -1,11 +1,11 @@
 <template>
   <div
-    class="sm:bg-gray-100 sm:dark:bg-gray-800 sm:p-5 flex flex-row justify-center rounded-2xl md:h-96 lg:h-128"
+    class="sm:bg-gray-100 sm:dark:bg-gray-800 sm:p-5 flex flex-row justify-center rounded-2xl sm:h-96 lg:h-128"
   >
     <div class="shadow-lg h-full rounded-xl overflow-hidden relative">
       <div class="z-10 w-full absolute bottom-0 left-0">
         <div
-          class="z-10 item-bg-gradient w-full px-6 py-4 text-white text-left"
+          class="z-10 item-bg-gradient w-full sm:w-auto px-6 py-4 text-white text-left"
         >
           <h3 class="text-md mt-1 leading-6 font-medium">
             {{ activeCategory }}
@@ -15,7 +15,7 @@
       <img
         :src="`https://cdn.godi.se/${activeImage}`"
         alt="Random image"
-        class="h-full object-contain object-contain z-0"
+        class="w-full sm:h-full sm:w-auto object-contain object-contain z-0"
       />
     </div>
   </div>
